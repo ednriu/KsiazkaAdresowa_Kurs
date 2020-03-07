@@ -5,6 +5,7 @@
 #include <fstream>
 #include "Uzytkownik.h"
 #include "MetodyPomocnicze.h"
+#include <cstdlib>
 
 using namespace std;
 
@@ -18,6 +19,8 @@ class PlikZUzytkownikami
 public:
     PlikZUzytkownikami();
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
+    void wczytajUzytkownikowZPliku(vector <Uzytkownik> &uzytkownicy);
+    Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
 
 };

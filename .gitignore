@@ -3,4 +3,6 @@ obj/
 plan/
 KsiazkaAdresowa_kurs.*
 *.txt
+KsiazkaAdresowa.o
+main.o
 
