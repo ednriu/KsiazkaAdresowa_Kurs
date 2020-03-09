@@ -63,3 +63,51 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
 {
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 };
+
+void UzytkownikMenedzer::zaloguj()
+{
+    bool hasloPoprawne = false;
+    bool istniejeLogin = false;
+    Uzytkownik uzytkownik;
+    MetodyPomocnicze pomocnik;
+    string login = "", haslo = "";
+
+    cout << endl << "Podaj login: ";
+    login = pomocnik.wczytajLinie();
+
+    vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
+    while (itr != uzytkownicy.end())
+    {
+        if ((*itr).pobierzLogin()== login)
+        {
+            istniejeLogin = true;
+            for (int iloscProb = 3; iloscProb > 0; iloscProb--)
+            {
+                cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
+                haslo = pomocnik.wczytajLinie();
+                if ((*itr).pobierzHaslo() == haslo)
+                {
+                    cout << endl << "Zalogowales sie." << endl << endl;
+                    system("pause");
+                    zalogowanyUzytkownik.ustawId((*itr).pobierzId());
+                    iloscProb = 0;
+                    hasloPoprawne = true;
+                }
+            }
+            if (!hasloPoprawne)
+            {
+                cout << "Wprowadzono 3 razy bledne haslo." << endl;
+                system("pause");
+                zalogowanyUzytkownik.ustawId(0);
+            }
+
+        }
+        itr++;
+    }
+    if (!istniejeLogin)
+    {
+        cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+        system("pause");
+        zalogowanyUzytkownik.ustawId(0);
+    }
+}
