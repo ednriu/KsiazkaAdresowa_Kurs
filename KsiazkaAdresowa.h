@@ -25,5 +25,7 @@ public:
     void wypiszWszystkichUzytkownikow();
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
+    void zaloguj();
+
 };
 #endif

@@ -4,9 +4,8 @@
 
 int DaneMenedzer::dodajAdresata()
 {
-
-    //
     //int idZalogowanegoUzytkownika, int idOstatniegoAdresata
+
     int idZalogowanegoUzytkownika = 1;
     int idOstatniegoAdresata = 1;
     system("cls");

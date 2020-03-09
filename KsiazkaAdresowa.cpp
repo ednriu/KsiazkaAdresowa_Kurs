@@ -8,6 +8,10 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 {
     uzytkownikMenedzer.wypiszWszystkichUzytkownikow();
 }
+void KsiazkaAdresowa::zaloguj()
+{
+    uzytkownikMenedzer.zaloguj();
+}
 void KsiazkaAdresowa::dodajAdresata()
 {
     daneMenedzer.dodajAdresata();

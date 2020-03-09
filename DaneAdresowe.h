@@ -22,6 +22,7 @@ public:
     void ustawNumerTelefonu(string nowyNumerTelefonu);
     void ustawEmail(string nowyEmail);
     void ustawAdres(string nowyAdres);
+
     int pobierzId();
     int pobierzIdUzytkownika();
     string pobierzImie();
