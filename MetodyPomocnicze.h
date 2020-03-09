@@ -10,6 +10,8 @@ class MetodyPomocnicze
 {
 public:
     static string konwerjsaIntNaString(int liczba);
+    string wczytajLinie();
+    string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 };
 
 #endif // METODYPOMOCNICZE_H
