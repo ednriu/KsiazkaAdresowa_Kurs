@@ -1,20 +1,18 @@
 #include "DaneMenedzer.h"
 #include "MetodyPomocnicze.h"
 #include "DaneAdresowe.h"
+#include "PlikZDanymi.h"
 
-int DaneMenedzer::dodajAdresata()
+int DaneMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
 {
     //int idZalogowanegoUzytkownika, int idOstatniegoAdresata
-
-    int idZalogowanegoUzytkownika = 1;
+    PlikZDanymi plikZDanymi;
     int idOstatniegoAdresata = 1;
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-
     DaneAdresowe adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
     adresaci.push_back(adresat);
-    //dopiszAdresataDoPliku(adresat);
-
+    plikZDanymi.dopiszAdresataDoPliku(adresat);
     return ++idOstatniegoAdresata;
 }
 

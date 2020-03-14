@@ -1,5 +1,6 @@
 #include "UzytkownikMenedzer.h"
 
+
 void UzytkownikMenedzer::rejestracjaUzytkownika()
 {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
@@ -64,7 +65,7 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 };
 
-void UzytkownikMenedzer::zaloguj()
+int UzytkownikMenedzer::zaloguj()
 {
     bool hasloPoprawne = false;
     bool istniejeLogin = false;
@@ -89,7 +90,8 @@ void UzytkownikMenedzer::zaloguj()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    zalogowanyUzytkownik.ustawId((*itr).pobierzId());
+                    idZalogowanegoUzytkownika = itr ->pobierzId();
+                    //zalogowanyUzytkownik.ustawId((*itr).pobierzId());
                     iloscProb = 0;
                     hasloPoprawne = true;
                 }
@@ -98,7 +100,8 @@ void UzytkownikMenedzer::zaloguj()
             {
                 cout << "Wprowadzono 3 razy bledne haslo." << endl;
                 system("pause");
-                zalogowanyUzytkownik.ustawId(0);
+                idZalogowanegoUzytkownika = 0;
+                return idZalogowanegoUzytkownika;
             }
 
         }
@@ -108,6 +111,25 @@ void UzytkownikMenedzer::zaloguj()
     {
         cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
         system("pause");
-        zalogowanyUzytkownik.ustawId(0);
+        idZalogowanegoUzytkownika = 0;
     }
+}
+
+void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
+{
+    MetodyPomocnicze pomocnik;
+    string noweHaslo = "";
+    cout << "Podaj nowe haslo: ";
+    noweHaslo = pomocnik.wczytajLinie();
+
+    for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
+    {
+        if ((*itr).pobierzId() == idZalogowanegoUzytkownika)
+        {
+            (*itr).ustawHaslo(noweHaslo);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            system("pause");
+        }
+    }
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }

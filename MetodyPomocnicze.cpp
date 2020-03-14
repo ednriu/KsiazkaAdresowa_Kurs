@@ -25,3 +25,27 @@ string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst
     }
     return tekst;
 }
+
+string MetodyPomocnicze::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(DaneAdresowe adresat)
+{
+    string liniaZDanymiAdresata = "";
+
+    liniaZDanymiAdresata += konwerjsaIntNaString(adresat.pobierzId()) + '|';
+    liniaZDanymiAdresata += konwerjsaIntNaString(adresat.pobierzIdUzytkownika()) + '|';
+    liniaZDanymiAdresata += adresat.pobierzImie() + '|';
+    liniaZDanymiAdresata += adresat.pobierzNazwisko() + '|';
+    liniaZDanymiAdresata += adresat.pobierzNumerTelefonu() + '|';
+    liniaZDanymiAdresata += adresat.pobierzEmail() + '|';
+    liniaZDanymiAdresata += adresat.pobierzAdres() + '|';
+
+    return liniaZDanymiAdresata;
+}
+
+bool MetodyPomocnicze::czyPlikJestPusty(fstream &plikTekstowy)
+{
+    plikTekstowy.seekg(0, ios::end);
+    if (plikTekstowy.tellg() == 0)
+        return true;
+    else
+        return false;
+}

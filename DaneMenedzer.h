@@ -12,7 +12,7 @@ class DaneMenedzer
     vector<DaneAdresowe> adresaci;
 
 public:
-    int dodajAdresata();
+    int dodajAdresata(int idZalogowanegoAdresata);
     void wyswietlWszystkichAdresatow();
 };
 #endif

@@ -1,5 +1,6 @@
 #include "DaneAdresowe.h"
 
+
 void DaneAdresowe::ustawId(int noweId)
 {
     if (noweId>=0)

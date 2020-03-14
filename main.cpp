@@ -9,8 +9,9 @@ int main()
 
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
     ksiazkaAdresowa.zaloguj();
+    ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+    ksiazkaAdresowa.dodajAdresata();
     //ksiazkaAdresowa.dodajAdresata();
-    //ksiazkaAdresowa.dodajAdresata();
-    //ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
     return 0;
 }
