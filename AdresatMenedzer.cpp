@@ -3,29 +3,33 @@
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
 
-int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
+int AdresatMenedzer::dodajAdresata()
 {
-    //int idZalogowanegoUzytkownika, int idOstatniegoAdresata
-    PlikZAdresatami plikZAdresatami;
-    int idOstatniegoAdresata = 1;
+    Adresat adresat;
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    Adresat adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+    adresat = podajDaneNowegoAdresata();
     adresaci.push_back(adresat);
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
+    if (plikZAdresatami.dopiszAdresataDoPliku(adresat))
+    {
+        cout << "Nowy adresat zostal dodany." <<endl;
+    }
+    else
+    {
+        cout << "Blad z dodawaniem adresata";
+        system("pause");
+    };
     return ++idOstatniegoAdresata;
 }
 
-Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+Adresat AdresatMenedzer::podajDaneNowegoAdresata()
 {
 
     MetodyPomocnicze metodyPomocnicze;
     Adresat adresat;
-    //adresat.ustawId(++idOstatniegoAdresata);
-    //adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
-    adresat.ustawId(1);
-    adresat.ustawIdUzytkownika(1);
+    adresat.ustawId(plikZAdresatami.pobierzDaneOstatniegoAdresata()+1);
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(metodyPomocnicze.zamienPierwszaLitereNaDuzaAPozostaleNaMale(metodyPomocnicze.wczytajLinie()));

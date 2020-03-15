@@ -5,10 +5,9 @@ using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
-
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    ksiazkaAdresowa.zaloguj();
+    ksiazkaAdresowa.logowanieUzytkownika();
     ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
     ksiazkaAdresowa.dodajAdresata();
     //ksiazkaAdresowa.dodajAdresata();

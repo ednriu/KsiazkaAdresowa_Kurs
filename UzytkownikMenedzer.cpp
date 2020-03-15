@@ -65,7 +65,7 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 };
 
-int UzytkownikMenedzer::zaloguj()
+int UzytkownikMenedzer::logowanieUzytkownika()
 {
     bool hasloPoprawne = false;
     bool istniejeLogin = false;
@@ -132,4 +132,19 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
         }
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
+void UzytkownikMenedzer::wylogowanieUzytkownika()
+{
+    idZalogowanegoUzytkownika = 0;
+}
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
+{
+    if (idZalogowanegoUzytkownika>0)
+        return true;
+    else
+        return false;
+}
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
 }
