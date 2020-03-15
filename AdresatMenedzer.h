@@ -20,7 +20,7 @@ public:
     {
         adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
     };
-    int dodajAdresata(int idZalogowanegoAdresata);
+    int dodajAdresata();
     void wyswietlWszystkichAdresatow();
 };
 #endif

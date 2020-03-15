@@ -19,7 +19,6 @@ int AdresatMenedzer::dodajAdresata()
         cout << "Blad z dodawaniem adresata";
         system("pause");
     };
-    return ++idOstatniegoAdresata;
 }
 
 Adresat AdresatMenedzer::podajDaneNowegoAdresata()
@@ -28,7 +27,7 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata()
     MetodyPomocnicze metodyPomocnicze;
     Adresat adresat;
 
-    adresat.ustawId(plikZAdresatami.pobierzDaneOstatniegoAdresata()+1);
+    adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata()+1);
     adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";

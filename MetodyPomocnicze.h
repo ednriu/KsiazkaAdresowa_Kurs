@@ -15,6 +15,7 @@ public:
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     bool czyPlikJestPusty(fstream &plikTekstowy);
+    int konwersjaStringNaInt(string liczba);
 };
 
 #endif // METODYPOMOCNICZE_H
