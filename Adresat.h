@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class DaneAdresowe
+class Adresat
 {
     int id;
     int idUzytkownika;

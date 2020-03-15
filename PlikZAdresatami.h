@@ -1,6 +1,6 @@
 #ifndef PLIKZDANYMI_H
 #define PLIKZDANYMI_H
-#include "DaneAdresowe.h"
+#include "Adresat.h"
 #include "MetodyPomocnicze.h"
 #include <iostream>
 #include <fstream>
@@ -8,10 +8,10 @@
 
 using namespace std;
 
-class PlikZDanymi
+class PlikZAdresatami
 {
-    DaneAdresowe adresat;
+    Adresat adresat;
 public:
-    void dopiszAdresataDoPliku(DaneAdresowe adresat);
+    void dopiszAdresataDoPliku(Adresat adresat);
 };
-#endif // PlikZDanymi
+#endif // PlikZAdresatami

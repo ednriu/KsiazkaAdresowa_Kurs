@@ -8,14 +8,14 @@
 #include <sstream>
 
 #include "UzytkownikMenedzer.h"
-#include "DaneMenedzer.h"
+#include "AdresatMenedzer.h"
 
 using namespace std;
 
 class KsiazkaAdresowa
 {
     UzytkownikMenedzer uzytkownikMenedzer;
-    DaneMenedzer daneMenedzer;
+    AdresatMenedzer adresatMenedzer;
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami)
     {

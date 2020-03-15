@@ -1,6 +1,6 @@
 #ifndef METODYPOMOCNICZE_H
 #define METODYPOMOCNICZE_H
-#include "DaneAdresowe.h"
+#include "Adresat.h"
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -13,7 +13,7 @@ public:
     static string konwerjsaIntNaString(int liczba);
     string wczytajLinie();
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
-    string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(DaneAdresowe adresat);
+    string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     bool czyPlikJestPusty(fstream &plikTekstowy);
 };
 

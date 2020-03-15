@@ -18,9 +18,9 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 }
 void KsiazkaAdresowa::dodajAdresata()
 {
-    daneMenedzer.dodajAdresata(1);
+    adresatMenedzer.dodajAdresata(1);
 }
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
-    daneMenedzer.wyswietlWszystkichAdresatow();
+    adresatMenedzer.wyswietlWszystkichAdresatow();
 }

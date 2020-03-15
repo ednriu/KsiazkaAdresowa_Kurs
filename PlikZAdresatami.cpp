@@ -1,6 +1,6 @@
-#include "PlikZDanymi.h"
+#include "PlikZAdresatami.h"
 
-void PlikZDanymi::dopiszAdresataDoPliku(DaneAdresowe adresat)
+void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
 {
     MetodyPomocnicze pomocnik;
     string nazwaPlikuZAdresatami = "Adresaci.txt";

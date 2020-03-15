@@ -1,26 +1,26 @@
-#include "DaneMenedzer.h"
+#include "AdresatMenedzer.h"
 #include "MetodyPomocnicze.h"
-#include "DaneAdresowe.h"
-#include "PlikZDanymi.h"
+#include "Adresat.h"
+#include "PlikZAdresatami.h"
 
-int DaneMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
+int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
 {
     //int idZalogowanegoUzytkownika, int idOstatniegoAdresata
-    PlikZDanymi plikZDanymi;
+    PlikZAdresatami plikZAdresatami;
     int idOstatniegoAdresata = 1;
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    DaneAdresowe adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+    Adresat adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
     adresaci.push_back(adresat);
-    plikZDanymi.dopiszAdresataDoPliku(adresat);
+    plikZAdresatami.dopiszAdresataDoPliku(adresat);
     return ++idOstatniegoAdresata;
 }
 
-DaneAdresowe DaneMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
 {
 
     MetodyPomocnicze metodyPomocnicze;
-    DaneAdresowe adresat;
+    Adresat adresat;
     //adresat.ustawId(++idOstatniegoAdresata);
     //adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
@@ -44,15 +44,15 @@ DaneAdresowe DaneMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika
     return adresat;
 }
 
-void DaneMenedzer::wyswietlWszystkichAdresatow()
+void AdresatMenedzer::wyswietlWszystkichAdresatow()
 {
-    //vector<DaneMenedzer> adresaci;
+    //vector<AdresatMenedzer> adresaci;
     system("cls");
     if (!adresaci.empty())
     {
         cout << "             >>> ADRESACI <<<" << endl;
         cout << "-----------------------------------------------" << endl;
-        for (vector <DaneAdresowe> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
+        for (vector <Adresat> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
         {
             wyswietlDaneAdresata(*itr);
         }
@@ -65,7 +65,7 @@ void DaneMenedzer::wyswietlWszystkichAdresatow()
     system("pause");
 }
 
-void DaneMenedzer::wyswietlDaneAdresata(DaneAdresowe adresat)
+void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
 {
     cout << endl << "Id:         " << adresat.pobierzId()<< endl;
     cout << "Imie:               " << adresat.pobierzImie() << endl;
