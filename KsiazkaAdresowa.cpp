@@ -42,3 +42,14 @@ void KsiazkaAdresowa::wylogowanieUzytkownika()
     delete adresatMenedzer;
     adresatMenedzer = NULL;
 }
+bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
+{
+    if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}

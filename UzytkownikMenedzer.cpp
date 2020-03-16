@@ -12,6 +12,7 @@ void UzytkownikMenedzer::rejestracjaUzytkownika()
 
 Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika()
 {
+    system("cls");
     Uzytkownik uzytkownik;
     //uzytkownik.id = pobierzIdNowegoUzytkownika(uzytkownicy);
     uzytkownik.ustawId(pobierzIdNowegoUzytkownika());
@@ -52,6 +53,7 @@ bool UzytkownikMenedzer::czyIstniejeLogin(string login)
 
 void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
 {
+    system("cls");
     for (int i=0; i<uzytkownicy.size(); i++)
     {
         cout << uzytkownicy[i].pobierzId()<<endl;
@@ -72,8 +74,8 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     Uzytkownik uzytkownik;
     MetodyPomocnicze pomocnik;
     string login = "", haslo = "";
-
-    cout << endl << "Podaj login: ";
+    system("cls");
+    cout << "Podaj login: ";
     login = pomocnik.wczytajLinie();
 
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
@@ -84,7 +86,8 @@ int UzytkownikMenedzer::logowanieUzytkownika()
             istniejeLogin = true;
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
-                cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
+                if (iloscProb<3) cout << "Pozostalo prob: " << iloscProb <<endl;
+                cout << "Podaj haslo: ";
                 haslo = pomocnik.wczytajLinie();
                 if ((*itr).pobierzHaslo() == haslo)
                 {
