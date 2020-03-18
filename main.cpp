@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int main()
+int _main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     while(true)
@@ -45,6 +45,7 @@ int main()
         system("cls");
         cout << "Zaloguj (z)" << endl;
         cout << "Rejestracja Uzytkownika (r)" << endl;
+        cout << "Koniec Programu (0)" << endl;
         char wybor = _getch();
         switch (wybor)
         {
@@ -64,23 +65,16 @@ int main()
         }
     }
     }
-
-
-    //ksiazkaAdresowa.czyUzytkownikJestZalogowany();
-    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    //ksiazkaAdresowa.logowanieUzytkownika();
-    //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
-    //ksiazkaAdresowa.wyswietlWszystkichAdresatow();
-    //ksiazkaAdresowa.wyswietlWszystkichAdresatow();
     return 0;
 }
 
-int testmain()
+int main()
 {
     AdresatMenedzer adresatMenedzer("Adresaci.txt",1);
     cout <<"dziala"<<endl;
     adresatMenedzer.wyswietlWszystkichAdresatow();
-    adresatMenedzer.dodajAdresata();
+    //adresatMenedzer.dodajAdresata();
+    adresatMenedzer.usunAdresata();
     return 0;
 }
 

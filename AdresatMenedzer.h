@@ -4,6 +4,7 @@
 #include "PlikZAdresatami.h"
 #include <iostream>
 #include <vector>
+#include "MetodyPomocnicze.h"
 using namespace std;
 
 class AdresatMenedzer
@@ -13,6 +14,7 @@ class AdresatMenedzer
     PlikZAdresatami plikZAdresatami;
     Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresat);
+    int podajIdWybranegoAdresata();
 
 
 public:
@@ -22,5 +24,6 @@ public:
     };
     int dodajAdresata();
     void wyswietlWszystkichAdresatow();
+    void usunAdresata();
 };
 #endif
