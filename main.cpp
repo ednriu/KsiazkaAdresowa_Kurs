@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int _main()
+int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     while(true)
@@ -68,7 +68,7 @@ int _main()
     return 0;
 }
 
-int main()
+int Test_main()
 {
     AdresatMenedzer adresatMenedzer("Adresaci.txt",1);
     cout <<"dziala"<<endl;
