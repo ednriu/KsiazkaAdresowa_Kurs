@@ -104,6 +104,7 @@ void AdresatMenedzer::usunAdresata()
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
                 //return idUsuwanegoAdresata;
+                podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsuwanegoAdresata);
             }
             else
             {
@@ -111,6 +112,7 @@ void AdresatMenedzer::usunAdresata()
                 system("pause");
                 //return 0;
             }
+            break;
         }
     }
     if (czyIstniejeAdresat == false)
@@ -128,5 +130,15 @@ int AdresatMenedzer::podajIdWybranegoAdresata()
     cout << "Podaj numer ID Adresata: ";
     idWybranegoAdresata  = pomocnik.wczytajLiczbeCalkowita();
     return idWybranegoAdresata;
+}
+
+void AdresatMenedzer::podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata)
+{
+
+    if (idUsuwanegoAdresata == plikZAdresatami.pobierzIdOstatniegoAdresata())
+    {
+        plikZAdresatami.ustawIdOstatniegoAdresata(plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata());
+    }
+
 }
 

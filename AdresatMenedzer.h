@@ -15,6 +15,7 @@ class AdresatMenedzer
     Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresat);
     int podajIdWybranegoAdresata();
+    void podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwaneGoAdresata);
 
 
 public:

@@ -72,9 +72,12 @@ int main()
 {
     AdresatMenedzer adresatMenedzer("Adresaci.txt",1);
     cout <<"dziala"<<endl;
+
     adresatMenedzer.wyswietlWszystkichAdresatow();
-    //adresatMenedzer.dodajAdresata();
     adresatMenedzer.usunAdresata();
+    adresatMenedzer.wyswietlWszystkichAdresatow();
+    adresatMenedzer.dodajAdresata();
+    adresatMenedzer.wyswietlWszystkichAdresatow();
     return 0;
 }
 
