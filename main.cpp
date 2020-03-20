@@ -14,6 +14,8 @@ int main()
         system("cls");
         cout << "Dodaj Adresata (d)" << endl;
         cout << "Wypisz Adresatow (a)" << endl;
+        cout << "Usun Adresata (u)" << endl;
+        cout << "Edytuj Adresata (e)" << endl;
         cout << "Zmiana Hasla (h)" << endl;
         cout << "Wyloguj (w)" << endl;
         char wybor = _getch();
@@ -25,11 +27,17 @@ int main()
         case 'a':
             ksiazkaAdresowa.wyswietlWszystkichAdresatow();
             break;
-        case 'w':
-            ksiazkaAdresowa.wylogowanieUzytkownika();
+        case 'u':
+            ksiazkaAdresowa.usunAdresata();
+            break;
+        case 'e':
+            ksiazkaAdresowa.edytujAdresata();
             break;
         case 'h':
             ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+            break;
+        case 'w':
+            ksiazkaAdresowa.wylogowanieUzytkownika();
             break;
         case '0':
             exit(0);
@@ -68,15 +76,13 @@ int main()
     return 0;
 }
 
-int Test_main()
+int test_main()
 {
     AdresatMenedzer adresatMenedzer("Adresaci.txt",1);
     cout <<"dziala"<<endl;
 
     adresatMenedzer.wyswietlWszystkichAdresatow();
-    adresatMenedzer.usunAdresata();
-    adresatMenedzer.wyswietlWszystkichAdresatow();
-    adresatMenedzer.dodajAdresata();
+    adresatMenedzer.edytujAdresata();
     adresatMenedzer.wyswietlWszystkichAdresatow();
     return 0;
 }

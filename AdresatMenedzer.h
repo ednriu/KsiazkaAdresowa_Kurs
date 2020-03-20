@@ -16,6 +16,7 @@ class AdresatMenedzer
     void wyswietlDaneAdresata(Adresat adresat);
     int podajIdWybranegoAdresata();
     void podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwaneGoAdresata);
+    char wybierzOpcjeZMenuEdycja();
 
 
 public:
@@ -26,5 +27,6 @@ public:
     int dodajAdresata();
     void wyswietlWszystkichAdresatow();
     void usunAdresata();
+    void edytujAdresata();
 };
 #endif
