@@ -15,7 +15,7 @@ public:
     string wczytajLinie();
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
-    bool czyPlikJestPusty(fstream &plikTekstowy);
+    //bool czyPlikJestPusty(fstream &plikTekstowy);
     static int konwersjaStringNaInt(string liczba);
     char wczytajZnak();
     int wczytajLiczbeCalkowita();

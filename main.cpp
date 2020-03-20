@@ -13,18 +13,19 @@ int main()
     {
         system("cls");
         cout << "Dodaj Adresata (d)" << endl;
-        cout << "Wypisz Adresatow (a)" << endl;
+        cout << "Wypisz Adresatow (w)" << endl;
         cout << "Usun Adresata (u)" << endl;
         cout << "Edytuj Adresata (e)" << endl;
         cout << "Zmiana Hasla (h)" << endl;
-        cout << "Wyloguj (w)" << endl;
+        cout << "Wyloguj (k)" << endl;
+        cout << "Zakonczenie Programu (0)" << endl;
         char wybor = _getch();
         switch (wybor)
         {
         case 'd':
             ksiazkaAdresowa.dodajAdresata();
             break;
-        case 'a':
+        case 'w':
             ksiazkaAdresowa.wyswietlWszystkichAdresatow();
             break;
         case 'u':
@@ -36,7 +37,7 @@ int main()
         case 'h':
             ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
             break;
-        case 'w':
+        case 'k':
             ksiazkaAdresowa.wylogowanieUzytkownika();
             break;
         case '0':
