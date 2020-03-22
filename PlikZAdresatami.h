@@ -21,7 +21,7 @@ class PlikZAdresatami : public PlikTekstowy
     string pobierzLiczbe(string tekst, int pozycjaZnaku);
     void usunPlik(string nazwaPlikuZRozszerzeniem);
     void zmienNazwePliku(string staraNazwa, string nowaNazwa);
-    void edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
+    void edytujWybranaLinieWPliku(string liniaZDanymiAdresataOddzielonePionowymiKreskami, int idAdresata);
 
 
 public:

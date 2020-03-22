@@ -249,13 +249,13 @@ void PlikZAdresatami::zaktualizujDaneWybranegoAdresata(Adresat adresat)
     int numerLiniiEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
 
-    numerLiniiEdytowanegoAdresata = zwrocNumerLiniiSzukanegoAdresata(adresat.pobierzId());
     liniaZDanymiAdresata = pomocnik.zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
-    edytujWybranaLinieWPliku(numerLiniiEdytowanegoAdresata, liniaZDanymiAdresata);
+    edytujWybranaLinieWPliku(liniaZDanymiAdresata, adresat.pobierzId());
 
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
 }
-void PlikZAdresatami::edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami)
+
+void PlikZAdresatami::edytujWybranaLinieWPliku(string liniaZDanymiAdresataOddzielonePionowymiKreskami, int idAdresata)
 {
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string wczytanaLinia = "";
@@ -269,7 +269,7 @@ void PlikZAdresatami::edytujWybranaLinieWPliku(int numerEdytowanejLinii, string 
     {
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
         {
-            if (numerWczytanejLinii == numerEdytowanejLinii)
+            if(idAdresata == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia))
             {
                 if (numerWczytanejLinii == 1)
                     tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami;
